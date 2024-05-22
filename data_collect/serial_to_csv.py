@@ -3,7 +3,7 @@ import csv
 import time
 
 # Open serial port
-ser = serial.Serial('/dev/cu.usbmodem2101', 9600)
+ser = serial.Serial('/dev/cu.usbmodem14301', 115200)
 
 
 # Open or create a CSV file

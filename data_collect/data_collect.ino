@@ -26,10 +26,10 @@ void setup() {
 	pinMode(FLEX_PIN_4, INPUT); // for finger 4 (pinky)
 
 	// start serial communication
-	Serial.begin(9600);
+	Serial.begin(115200);
 
 	// add a delay to let the serial monitor start
-	delay(500);
+	delay(2000);
 
 	// print the header of the csv file
 	Serial.println("index,middle,ring,pinky");
