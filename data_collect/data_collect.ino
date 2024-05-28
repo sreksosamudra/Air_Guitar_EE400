@@ -74,5 +74,6 @@ void readFlexSensors() {
 void loop() {
   // put your main code here, to run repeatedly:
   readFlexSensors();
-  delay(500);
+  delay(100); // 1 sample every 100 ms = 10 samples per second = 600 samples per minute
+//   delay(50); // 1 sample every 50 ms = 20 samples per second = 1200 samples per minute
 }
