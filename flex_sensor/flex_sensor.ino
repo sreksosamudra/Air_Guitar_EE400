@@ -20,7 +20,7 @@ const float VCC = 4.98; // Measured voltage of Ardunio 5V line
 const int FLEX_PIN_1 = A0; // Pin connected to voltage divider output
 
 const float R_DIV_1 = 9860.0; // Measured resistance of 10k resistor
-const float STRAIGHT_RESISTANCE_1 = 25000.0; // resistance when straight
+const float STRAIGHT_RESISTANCE_1 = 14100.0; // resistance when straight
 const float BEND_RESISTANCE_1 = 60000.0; // resistance at 90 deg
 const float MAX_BEND_RESISTANCE_1 = 125000.0; // max resistance
 

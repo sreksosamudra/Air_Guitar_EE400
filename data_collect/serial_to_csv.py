@@ -3,7 +3,7 @@ import csv
 import time
 
 # Open serial port
-ser = serial.Serial('/dev/cu.usbmodem1201', 115200)
+ser = serial.Serial('/dev/cu.usbmodem11201', 115200)
 
 # Generate a filename with a timestamp
 timestamp = time.strftime("%Y%m%d-%H%M%S")
