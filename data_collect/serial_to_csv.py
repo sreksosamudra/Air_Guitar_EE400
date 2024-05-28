@@ -3,11 +3,14 @@ import csv
 import time
 
 # Open serial port
-ser = serial.Serial('/dev/cu.usbmodem14301', 115200)
+ser = serial.Serial('/dev/cu.usbmodem1201', 115200)
 
+# Generate a filename with a timestamp
+timestamp = time.strftime("%Y%m%d-%H%M%S")
+filename = f'/Users/brenda/Desktop/Working/TinyML/Air_Guitar_EE400/data_collect/sensor_data_{timestamp}.csv'
 
 # Open or create a CSV file
-with open('./data_collect/sensor_data.csv', mode='w') as file:
+with open(filename, mode='w') as file:
     writer = csv.writer(file)
     writer.writerow(['index', 'middle', 'ring', 'pinky'])  # Write the header
 

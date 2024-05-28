@@ -1,10 +1,10 @@
 // import to read local files
 // export the 4 channel flex sensor data to a csv file as resistance values
 const float VCC = 3.3; // Measured voltage of Ardunio 3.3V line
-const float STRAIGHT_RESISTANCE_1 = 27190.0; // resistance when straight for 1
-const float STRAIGHT_RESISTANCE_2 = 27720.0; // resistance when straight for 2
-const float STRAIGHT_RESISTANCE_3 = 26610.0; // resistance when straight for 3
-const float STRAIGHT_RESISTANCE_4 = 32400.0; // resistance when straight for 4
+const float STRAIGHT_RESISTANCE_1 = 28000.0; // resistance when straight for 1
+const float STRAIGHT_RESISTANCE_2 = 33500.0; // resistance when straight for 2
+const float STRAIGHT_RESISTANCE_3 = 26000.0; // resistance when straight for 3
+const float STRAIGHT_RESISTANCE_4 = 28000.0; // resistance when straight for 4
 
 const float MAX_BEND_RESISTANCE_1 = 60000.0; // max resistance for 1
 const float MAX_BEND_RESISTANCE_2 = 60000.0; // max resistance for 2
@@ -16,8 +16,8 @@ const int FLEX_PIN_2 = A2; // 007 23 20
 const int FLEX_PIN_3 = A3; // 005 23 25
 const int FLEX_PIN_4 = A4; // 005 23 5
 
-const int R_DIV = 47000.0; // Measured resistance of 47k resistor
-
+const int R_DIV = 10000.0; // Measured resistance of 47k resistor
+// const int R_DIV = 5.3;
 void setup() {
 	// pins for the 4 flex sensors
 	pinMode(FLEX_PIN_1, INPUT); // for finger 1 (index)
