@@ -49,26 +49,26 @@ void readFlexSensors() {
 	float flexV3 = flex3 * VCC / 1023.0;
 	float flexV4 = flex4 * VCC / 1023.0;
 
-	// resistance values
-	float flexR1 = R_DIV * (VCC / flexV1 - 1.0);
-	float flexR2 = R_DIV * (VCC / flexV2 - 1.0);
-	float flexR3 = R_DIV * (VCC / flexV3 - 1.0);
-	float flexR4 = R_DIV * (VCC / flexV4 - 1.0);
+	// // resistance values
+	// float flexR1 = R_DIV * (VCC / flexV1 - 1.0);
+	// float flexR2 = R_DIV * (VCC / flexV2 - 1.0);
+	// float flexR3 = R_DIV * (VCC / flexV3 - 1.0);
+	// float flexR4 = R_DIV * (VCC / flexV4 - 1.0);
 
-	// angle
-	float angle1 = map(flexR1, STRAIGHT_RESISTANCE_1, MAX_BEND_RESISTANCE_1, 0, 90.0);
-	float angle2 = map(flexR2, STRAIGHT_RESISTANCE_2, MAX_BEND_RESISTANCE_2, 0, 90.0);
-	float angle3 = map(flexR3, STRAIGHT_RESISTANCE_3, MAX_BEND_RESISTANCE_3, 0, 90.0);
-	float angle4 = map(flexR4, STRAIGHT_RESISTANCE_4, MAX_BEND_RESISTANCE_4, 0, 90.0);
+	// // angle
+	// float angle1 = map(flexR1, STRAIGHT_RESISTANCE_1, MAX_BEND_RESISTANCE_1, 0, 90.0);
+	// float angle2 = map(flexR2, STRAIGHT_RESISTANCE_2, MAX_BEND_RESISTANCE_2, 0, 90.0);
+	// float angle3 = map(flexR3, STRAIGHT_RESISTANCE_3, MAX_BEND_RESISTANCE_3, 0, 90.0);
+	// float angle4 = map(flexR4, STRAIGHT_RESISTANCE_4, MAX_BEND_RESISTANCE_4, 0, 90.0);
 
 	// just print the resistance values in 4 columns, writing the file will be done with python
-	Serial.print(angle1);
+	Serial.print(flexV1);
 	Serial.print(",");
-	Serial.print(angle2);
+	Serial.print(flexV2);
 	Serial.print(",");
-	Serial.print(angle3);
+	Serial.print(flexV3);
 	Serial.print(",");
-	Serial.println(angle4);
+	Serial.println(flexV4);
 }
 
 void loop() {
