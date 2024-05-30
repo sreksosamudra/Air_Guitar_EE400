@@ -1,2 +1,4 @@
 *.DS_Store
 **/.DS_Store
+/presentation/slides_tex/*
+!/presentation/slides_tex/AirGuitar_Slide.pdf
