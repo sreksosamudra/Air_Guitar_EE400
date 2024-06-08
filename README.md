@@ -27,6 +27,8 @@ The repository is structured as follows:
 ├── README.md
 ├── trim.py
 ```
+### Hardware Requirements
+The project requires two Arduino Nano 33 BLE Sense boards. The first board is used to collect data from the flex sensors, while the second board is used to collect data from the accelerometer. The flex sensors (4) are connected to the first board, while the accelerometer is connected to the second board. The two boards are connected using Universal Asynchronous Receiver-Transmitter (UART) communication. For the use of the flex sensors, please refer to the [Flex Sensor](https://www.instructables.com/How-to-use-a-Flex-Sensor-Arduino-Tutorial/) tutorial and its detailed information can be found [FLEX SENSOR DATA SHEET '10 (SPARKFUN KIT)](https://cdn-shop.adafruit.com/datasheets/SpectraFlex2inch.pdf).
 ### Data Collection
 As a highly customizable project to ensure the best user experience, the data collection process is divided into two parts: data collection and data preprocessing. The data collection part is done using the Arduino IDE, while the data preprocessing part is done using Python. The data collection part is further divided into two categories: `hold30-p` and `relax`. The `hold30-p` category is used to collect data for the chord positions with holding them for 30s, while the `relax` category is used to collect data for the relaxed position. The data collected is stored in the `sensor_data.csv` file. The `serial_to_csv.py` script is used to monitor the serial port and save the data to the `sensor_data.csv` file. The sample rate, resistor connected, and baud rate can be adjusted in the `data_collect.ino` file.
 
@@ -37,3 +39,11 @@ With proper training and data collection, the model should have a high accuracy.
 
 ### Model Deployment
 By exporting the model to the Arduino IDE, the model can be deployed to the Arduino Nano 33 BLE Sense. The `glv-trans` folder contains the Arduino code for the gesture recognition system. The `glv_uart` folder contains the code for the flex sensors, while the `acc_uart` folder contains the code for the accelerometer. The `play_audio.py` script is used to play the audio files corresponding to the chords recognized by the model. The `trim.py` script is used to trim the audio files to the desired length. Universal Asynchronous Receiver-Transmitter (UART) communication is used to communicate between the two Arduino boards.
+
+## How to Use
+1. Collect data using the `data_collect.ino` file.
+2. Preprocess the data using the `serial_to_csv.py` script.
+3. Train the model using Edge Impulse.
+4. Export the model to the Arduino IDE.
+5. Deploy the model to the two Arduino Nano 33 BLE Sense using the `glv-trans` folder.
+6. Play the audio files using the `play_audio.py` script while the model is deployed and the two Arduino boards are connected with UART.
